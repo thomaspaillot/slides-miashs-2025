@@ -1,21 +1,20 @@
 {
   "name": "slides-miashs-2025",
-  "version": "1.0.0",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "reveal.js": "^5.1.0"
+    "reveal.js": "^5.1.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "vite": "^6.0.7",
-    "vite-plugin-static-copy": "^2.2.0"
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5"
   }
 }

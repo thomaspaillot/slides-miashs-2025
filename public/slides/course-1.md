@@ -159,4 +159,3 @@ Dans une application de messagerie par exemple, “messages" est une ressource d
 https://forms.gle/kPXpAaH6MiYAQQBe6
 
 <img src="https://github.com/user-attachments/assets/fa424d55-883f-4d67-b2a4-8969cd601db3" width="300" height="300" alt="qr-code">
-

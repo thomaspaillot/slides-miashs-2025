@@ -1,15 +1,8 @@
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-export default {
+// https://vite.dev/config/
+export default defineConfig({
   base: '/slides-miashs-2025/',
-  plugins: [
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'slides/*',
-          dest: 'slides'
-        }
-      ]
-    })
-  ]
-}
+  plugins: [vue()],
+})
