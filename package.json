@@ -15,6 +15,7 @@
     "reveal.js": "^5.1.0"
   },
   "devDependencies": {
-    "vite": "^6.0.7"
+    "vite": "^6.0.7",
+    "vite-plugin-static-copy": "^2.2.0"
   }
 }
