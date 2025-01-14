@@ -3,11 +3,15 @@
 du JS coté serveur avec Node 
 et de la programmation asynchrone : vous devez gérer des temps de réponse de serveur externe, des problemes réseaux, etc. 
 
+---
+
 ## Node 
 
 `node index.js` : exécute le fichier index.js dans un terminal 
 
-Merci d'avoir au moins Node 20 ou plus récent (genre node 22) 
+Merci d'avoir au moins Node 20 ou plus récent (node 22) 
+
+---
 
 ## Fetch 
 
@@ -17,6 +21,8 @@ Récupérer une ressource en ligne
 const result = await fetch("https://raw.githubusercontent.com/erik-sytnyk/movies-list/master/db.json") 
 ```
 
+---
+
 ## Asynchrone 
 
 ```js
@@ -24,6 +30,8 @@ const result = await fetch("https://raw.githubusercontent.com/erik-sytnyk/movies
 const text = await result.text()
 const jsonData = JSON.parse(text)
 ```
+
+---
 
 ## Asynchrone avec les erreurs
 
@@ -38,8 +46,12 @@ if ( result.ok ) {
 
 When in doubt, refer to MDN doc : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
+---
+
 ## Exemple dans le navigateur avec themoviedb 
 
+
+---
 
 ## Alternative avec les callbacks 
 
@@ -53,9 +65,11 @@ fetch("https://raw.githubusercontent.com/erik-sytnyk/movies-list/master/db.json"
   });
 ```
 
+---
+
 ## Séparer la logique dans votre code 
 
-```
+```js
 const getMovies = async () => {
   const fetchResult = await fetch("https://raw.githubusercontent.com/erik-sytnyk/movies-list/master/db.json")
   if ( fetchResult.ok ) {
@@ -68,5 +82,14 @@ const movieList = await getMovies()
 
 ```
 
+---
+
+## Exercice 
+
+1. Si pas node >= 20 : installer node avec nvm: `nvm install 22` (pour installer nvm: `https://github.com/nvm-sh/nvm`)
+2. Chercher un film sur themoviedb
+3. Créer une liste de film nulle (sauf si elle existe déja) 
+4. Ajouter le film dans la playlist de film nulle
+5. Récupérer la liste de film nulle
 
 
