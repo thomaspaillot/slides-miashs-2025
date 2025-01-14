@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, computed, ref } from "vue";
+import { onBeforeUnmount, onMounted, computed, ref, watch } from "vue";
 import { onBeforeRouteLeave, useRoute } from "vue-router";
 import Reveal from "reveal.js";
 import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
@@ -49,7 +49,11 @@ const markdownFilePath = computed(
   () => `${baseUrl}slides/course-${courseId.value}.md`
 );
 
-onMounted(() => {
+const initReveal = () => {
+  if (deck.value) {
+    deck.value.destroy();
+  }
+
   deck.value = new Reveal({
     width: 1050,
     height: 700,
@@ -62,6 +66,14 @@ onMounted(() => {
   });
 
   deck.value.initialize();
+};
+
+onMounted(() => {
+  initReveal();
+});
+
+watch(courseId, () => {
+  initReveal();
 });
 
 onBeforeRouteLeave(() => {
