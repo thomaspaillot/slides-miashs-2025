@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import { createHashHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 import App from "./App.vue";
 import HomeView from "./HomeView.vue";
 import CourseView from "./CourseView.vue";
@@ -14,7 +14,7 @@ const routes = [
 const baseUrl = import.meta.env.BASE_URL;
 
 const router = createRouter({
-  history: createHashHistory(baseUrl),
+  history: createWebHashHistory(baseUrl),
   routes,
 });
 
