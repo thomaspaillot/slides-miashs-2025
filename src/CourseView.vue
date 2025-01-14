@@ -31,17 +31,16 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, computed, ref, watch } from "vue";
-import { onBeforeRouteLeave, useRoute } from "vue-router";
+import { onBeforeUnmount, onMounted, computed, ref, watchEffect } from "vue";
+import { onBeforeRouteLeave, useRoute, useRouter } from "vue-router";
 import Reveal from "reveal.js";
 import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
 import Highlight from "reveal.js/plugin/highlight/highlight.esm.js";
 import Notes from "reveal.js/plugin/notes/notes.esm.js";
 
 const baseUrl = import.meta.env.BASE_URL;
-
 const route = useRoute();
-
+const router = useRouter();
 const deck = ref(null);
 
 const courseId = computed(() => route.params.id);
@@ -49,7 +48,7 @@ const markdownFilePath = computed(
   () => `${baseUrl}slides/course-${courseId.value}.md`
 );
 
-const initReveal = () => {
+const initializeDeck = () => {
   if (deck.value) {
     deck.value.destroy();
   }
@@ -58,22 +57,42 @@ const initReveal = () => {
     width: 1050,
     height: 700,
     margin: 0.1,
-    hash: true,
-    hashPrefix: `course-${courseId.value}/`,
+    hash: false,
     slideNumber: true,
     center: false,
     plugins: [Markdown, Highlight, Notes],
   });
 
-  deck.value.initialize();
+  // Sync Reveal.js state with router
+  deck.value.addEventListener("slidechanged", (event) => {
+    const h = event.indexh;
+    const v = event.indexv;
+    const slide = v > 0 ? `${h}/${v}` : `${h}`;
+    router.replace(
+      {
+        path: `/courses/${courseId.value}`,
+        hash: `#slide-${slide}`,
+      },
+      { replace: true }
+    );
+  });
+
+  // Initialize to current slide if in URL
+  deck.value.initialize().then(() => {
+    const slideMatch = route.hash.match(/slide-(\d+)(?:\/(\d+))?/);
+    if (slideMatch) {
+      const h = parseInt(slideMatch[1]);
+      const v = slideMatch[2] ? parseInt(slideMatch[2]) : 0;
+      deck.value.slide(h, v);
+    }
+  });
 };
 
-onMounted(() => {
-  initReveal();
-});
-
-watch(courseId, () => {
-  initReveal();
+watchEffect(() => {
+  if (courseId.value) {
+    // Small delay to ensure the DOM is updated with the new markdown path
+    setTimeout(initializeDeck, 100);
+  }
 });
 
 onBeforeRouteLeave(() => {
