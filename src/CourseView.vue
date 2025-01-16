@@ -67,11 +67,11 @@ const initializeDeck = () => {
   deck.value.addEventListener("slidechanged", (event) => {
     const h = event.indexh;
     const v = event.indexv;
-    const slide = v > 0 ? `${h}/${v}` : `${h}`;
+    const slide = v > 0 ? `${h}-${v}` : `${h}`;
     router.replace(
       {
         path: `/courses/${courseId.value}`,
-        hash: `#slide-${slide}`,
+        query: { slide: slide },
       },
       { replace: true }
     );
@@ -79,11 +79,14 @@ const initializeDeck = () => {
 
   // Initialize to current slide if in URL
   deck.value.initialize().then(() => {
-    const slideMatch = route.hash.match(/slide-(\d+)(?:\/(\d+))?/);
-    if (slideMatch) {
-      const h = parseInt(slideMatch[1]);
-      const v = slideMatch[2] ? parseInt(slideMatch[2]) : 0;
-      deck.value.slide(h, v);
+    const slideParam = route.query.slide;
+    if (slideParam) {
+      const slideMatch = slideParam.match(/(\d+)(?:-(\d+))?/);
+      if (slideMatch) {
+        const h = parseInt(slideMatch[1]);
+        const v = slideMatch[2] ? parseInt(slideMatch[2]) : 0;
+        deck.value.slide(h, v);
+      }
     }
   });
 };
