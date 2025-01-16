@@ -86,6 +86,8 @@ const movieList = await getMovies()
 
 ## Exercice 
 
+0. Si pas de compte : `thomaspaillot` :  `u592Y6%YkBod`
+
 1. Si pas node >= 20 : installer node avec nvm: `nvm install 22` (pour installer nvm: `https://github.com/nvm-sh/nvm`)
 2. Chercher un film sur themoviedb
 3. Créer une liste de film nulle (sauf si elle existe déja) 
