@@ -4,6 +4,7 @@ import App from "./App.vue";
 import HomeView from "./HomeView.vue";
 import CourseView from "./CourseView.vue";
 import "reveal.js/dist/reveal.css";
+import "reveal.js/plugin/highlight/monokai.css";
 import "./assets/theme.css";
 
 const routes = [
