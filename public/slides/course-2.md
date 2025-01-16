@@ -90,8 +90,7 @@ const movieList = await getMovies()
 
 1. Si pas node >= 20 : installer node avec nvm: `nvm install 22` (pour installer nvm: `https://github.com/nvm-sh/nvm`)
 2. Chercher un film sur themoviedb
-3. Créer une liste de film nulle (sauf si elle existe déja) 
-4. Ajouter le film dans la playlist de film nulle
-5. Récupérer la liste de film nulle
+4. Ajouter le film dans la watch list
+5. Récupérer votre watch list 
 
 
