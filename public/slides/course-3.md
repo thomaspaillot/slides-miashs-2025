@@ -45,21 +45,21 @@ npm install express # installe la librairie “express”
 
 ```json
 {
-	"name": "my awesome API",
-	"version": "1.0.0",
-	  "type": "module",
-		"main": "index.js",
-		"scripts": {
-	    "start": "node index.js"
-		},
-		"author": "Hugo Gresse",
-		"license": "MIT",
-	  "dependencies": {
-		  "express": "^4.18.2"
-	  },
-	  "devDependencies": {
-		  "nodemon": "^3.0.2",
-	  }
+   "name":"my awesome API",
+   "version":"1.0.0",
+   "type":"module",
+   "main":"index.js",
+   "scripts":{
+      "start":"node index.js"
+   },
+   "author":"Hugo Gresse",
+   "license":"MIT",
+   "dependencies":{
+      "express":"^4.18.2"
+   },
+   "devDependencies":{
+      "nodemon":"^3.0.2"
+   }
 }
 ```
 
