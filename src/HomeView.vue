@@ -9,6 +9,9 @@
         <li>
           <RouterLink to="/courses/2">Cours #2 – 16 janvier 2025</RouterLink>
         </li>
+        <li>
+          <RouterLink to="/courses/3">Cours #3 – 20 janvier 2025</RouterLink>
+        </li>
       </ul>
     </nav>
   </div>
