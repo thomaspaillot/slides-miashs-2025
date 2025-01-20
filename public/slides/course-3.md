@@ -89,7 +89,7 @@ Ce dossier est généré automatiquement par Npm, il contient toutes les dépend
 
 ## Exercice
 
-- Créer un projet Javascript avec `Npm`
+- Créer un projet Javascript avec `npm init -y`
 - Ajouter `"type": "module"` dans votre fichier `package.json`
 - Installer `fastify` avec `Npm`
 - Créer un fichier `index.js` et y écrire le code permettant de lancer un serveur web avec Fastify
