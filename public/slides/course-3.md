@@ -47,19 +47,19 @@ npm install express # installe la librairie “express”
 {
 	"name": "my awesome API",
 	"version": "1.0.0",
-  "type": "module",
-	"main": "index.js",
-	"scripts": {
-    "start": "node index.js"
-	},
-	"author": "Hugo Gresse",
-	"license": "MIT",
-  "dependencies": {
-	  "express": "^4.18.2"
-  },
-  "devDependencies": {
-	  "nodemon": "^3.0.2",
-  }
+	  "type": "module",
+		"main": "index.js",
+		"scripts": {
+	    "start": "node index.js"
+		},
+		"author": "Hugo Gresse",
+		"license": "MIT",
+	  "dependencies": {
+		  "express": "^4.18.2"
+	  },
+	  "devDependencies": {
+		  "nodemon": "^3.0.2",
+	  }
 }
 ```
 
@@ -99,3 +99,5 @@ Ce dossier est généré automatiquement par Npm, il contient toutes les dépend
   - Une route permettant d'ajouter un film à sa “watch list” en utilisant son titre
   - Une route permettant de retirer un film de sa “watch list” en utilisant son id
   - Une route permettant de retirer un film de sa “watch list” en utilisant son titre
+ 
+  
