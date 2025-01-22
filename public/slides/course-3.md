@@ -100,4 +100,35 @@ Ce dossier est généré automatiquement par Npm, il contient toutes les dépend
   - Une route permettant de retirer un film de sa “watch list” en utilisant son id
   - Une route permettant de retirer un film de sa “watch list” en utilisant son titre
  
+---
+
+# Routes 
+
+- `GET /api/movies?q=movieName` :  Search for a movie and return results
+- `GET /api/watchlist` :  Return the current user watchlist
+- `POST /api/watchlist` : Add a movie to the user watchlist.
+  - The body should be a json, either with a movieId or the movie title 
+  ```
+  { 
+    "movieId": 123
+  } 
+  ```
+  or
+  ```
+  { 
+    "title": "Titanic"
+  } 
+  ```
+- `DELETE /api/watchlist` : Remove a movie to the user watchlist.
+  - The body should be a json, either with a movieId or the movie title 
+  ```
+  { 
+    "movieId": 123
+  } 
+  ```
+  or
+  ```
+  { 
+    "title": "Titanic"
+  } 
   
