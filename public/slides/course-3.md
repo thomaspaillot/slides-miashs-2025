@@ -102,7 +102,7 @@ Ce dossier est généré automatiquement par Npm, il contient toutes les dépend
  
 ---
 
-# Routes 
+##### Routes 
 
 - `GET /api/movies?q=movieName` :  Search for a movie and return results
 - `GET /api/watchlist` :  Return the current user watchlist
@@ -112,9 +112,7 @@ Ce dossier est généré automatiquement par Npm, il contient toutes les dépend
   { 
     "movieId": 123
   } 
-  ```
-  or
-  ```
+  // or
   { 
     "title": "Titanic"
   } 
@@ -125,9 +123,7 @@ Ce dossier est généré automatiquement par Npm, il contient toutes les dépend
   { 
     "movieId": 123
   } 
-  ```
-  or
-  ```
+  // or
   { 
     "title": "Titanic"
   } 
