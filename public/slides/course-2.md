@@ -94,35 +94,4 @@ const movieList = await getMovies()
 4. Ajouter le film dans la watch list
 5. Récupérer votre watch list 
 
----
-
-# Routes 
-
-- `GET /api/movies?q=movieName` :  Search for a movie and return results
-- `GET /api/watchlist` :  Return the current user watchlist
-- `POST /api/watchlist` : Add a movie to the user watchlist.
-  - The body should be a json, either with a movieId or the movie title 
-  ```
-  { 
-    "movieId": 123
-  } 
-  ```
-  or
-  ```
-  { 
-    "title": "Titanic"
-  } 
-  ```
-- `DELETE /api/watchlist` : Remove a movie to the user watchlist.
-  - The body should be a json, either with a movieId or the movie title 
-  ```
-  { 
-    "movieId": 123
-  } 
-  ```
-  or
-  ```
-  { 
-    "title": "Titanic"
-  } 
   ```
